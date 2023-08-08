@@ -16,6 +16,9 @@ const BookingApp = () => {
     <PrimeReactProvider>
       <div className='app-wrapper'>
         <div className='calendar-wrapper'>
+          {errorMessage && (
+            errorMessage
+          )}
           <div className='booking-duration-wrapper'>
             <h5>Choose booking duration</h5>
             <input

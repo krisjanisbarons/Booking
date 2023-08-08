@@ -35,12 +35,12 @@ export const SlotList = ({ date, availableSlots, duration }) => {
           You have successfully booked a slot!
         </p>
       </Dialog>
-      {errorMessage && (
-        <div>
-          {errorMessage}
-        </div>
-      )}
       <div className='slot-wrapper'>
+        {errorMessage && (
+          <div>
+            {errorMessage}
+          </div>
+        )}
         <div>
           <h4>Book time</h4>
         </div>
