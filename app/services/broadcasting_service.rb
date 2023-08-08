@@ -8,9 +8,10 @@ class BroadcastingService
   end
 
   def broadcast
+    broadcast_channel = "booking_#{booking.time_from.strftime("%m-%Y")}"
     Time.use_zone(nil) do
       ActionCable.server.broadcast(
-        "booking_#{booking.time_from.strftime("%m-%Y")}",
+        broadcast_channel,
         message
       )
     end
