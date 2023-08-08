@@ -1,0 +1,40 @@
+.app-wrapper {
+	display: flex;
+	margin: 3rem 2rem;
+}
+.html-duration-picker-input-controls-wrapper {
+	width: 5rem;
+}
+.p-datepicker {
+	position: relative !important;
+	top: unset !important;
+	left: unset !important;
+	transform: unset !important;
+	margin: 1rem 0;
+	height: fit-content !important;
+}
+.calendar-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.slot-wrapper {
+	margin-left: 0.5rem;
+  border: 0.5px solid grey;
+  border-radius: .5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 31rem;
+  overflow: scroll;
+}
+.slot-button {
+	width: 100%;
+	margin: 0.1rem 0;
+	background-color: #f4f4f4;
+	border-radius: 0.5rem;
+}
+.booking-duration-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
