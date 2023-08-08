@@ -7,7 +7,7 @@ class BroadcastingService
     @duration = duration
   end
 
-  def notify
+  def broadcast
     Time.use_zone(nil) do
       ActionCable.server.broadcast(
         "booking_#{booking.time_from.strftime("%m-%Y")}",

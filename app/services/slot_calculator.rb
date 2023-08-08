@@ -29,8 +29,8 @@ class SlotCalculator
     to_date = from_date + duration.minutes
 
     already_booked_slots.any? do |slot|
-      from_date.between?(slot.time_from, slot.time_to) ||
-      (to_date).between?(slot.time_from, slot.time_to) ||
+      (to_date > slot.time_from && to_date <= slot.time_to) ||
+      (from_date < slot.time_to && from_date > slot.time_from) ||
       (from_date < slot.time_from && slot.time_to < to_date)
     end
   end

@@ -4,12 +4,12 @@ module Api
 
     def create
       booking = Booking.new(time_from: params[:start_time], time_to: params[:end_time])
-      reserver = BookingService.new(booking, params[:date], params[:duration])
+      booking_service = BookingService.new(booking, params[:date], params[:duration])
 
-      if reserver.reserve
+      if booking_service.save_booking
         render json: { success: true }
       else
-        render json: { errors: reserver.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: booking_service.errors.full_messages }, status: :unprocessable_entity
       end
     end
   end

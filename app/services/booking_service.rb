@@ -9,9 +9,10 @@ class BookingService
     @duration = duration
   end
 
-  def reserve
+  def save_booking
     successfully_saved = false
-    with_lock_on_booking_dates do
+
+    Booking.with_advisory_lock('booking') do
       successfully_saved = booking.save
     end
 
@@ -22,13 +23,7 @@ class BookingService
 
   private
 
-  def with_lock_on_booking_dates
-    Booking.with_advisory_lock('booking') do
-      yield
-    end
-  end
-
   def broadcast_slots
-    BroadcastingService.new(booking, date, duration).notify
+    BroadcastingService.new(booking, date, duration).broadcast
   end
 end
