@@ -20,7 +20,7 @@ class BroadcastingService
   private
 
   def message
-    available_slots = SlotCalculator.new(date: date, duration: duration).available_slots
+    available_slots = SlotCalculatorService.new(date: date, duration: duration).available_slots
 
     { slots: available_slots }
   end

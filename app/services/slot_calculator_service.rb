@@ -1,4 +1,4 @@
-class SlotCalculator
+class SlotCalculatorService
   attr_reader :date, :duration
 
   def initialize(date:, duration:)
@@ -19,9 +19,9 @@ class SlotCalculator
     slot_array
   end
 
-	def already_booked_slots
-		Booking.bookings_for_two_days(date, duration)
-	end
+  def already_booked_slots
+    Booking.bookings_for_two_days(date, duration)
+  end
 
   private
 

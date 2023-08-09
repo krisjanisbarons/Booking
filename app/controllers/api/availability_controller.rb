@@ -6,7 +6,7 @@ module Api
       date = Date.parse(params[:date])
       duration = params[:duration]
 
-      available_slots = SlotCalculator.new(date: date, duration: duration).available_slots
+      available_slots = SlotCalculatorService.new(date: date, duration: duration).available_slots
 
       render json: available_slots
     end
